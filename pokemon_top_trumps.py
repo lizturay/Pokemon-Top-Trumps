@@ -186,7 +186,7 @@ def main():
     show_scores(my_score, opponent_score, limit)
 
     if my_score > opponent_score:
-        print("\n  YOU WIN! Congratulations! 🎉")
+        print("\n  YOU WIN! Congratulations!")
     elif opponent_score > my_score:
         print("\n  OPPONENT WINS! Better luck next time.")
     else:

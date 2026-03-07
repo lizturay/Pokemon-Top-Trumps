@@ -1,119 +1,68 @@
-# 🎴 Pokémon Top Trumps (Python)
+# Pokémon Top Trumps 🎴
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![GitHub stars](https://img.shields.io/github/stars/lizturay/pokemon-top-trumps?style=social)]()
-
-A command-line card battle game inspired by the classic *Top Trumps*.  
-Built using the **PokéAPI**, this project lets players draw random Pokémon and compete based on real in-game stats such as HP, Attack, and Defence.
+A terminal-based Top Trumps card game using real Pokémon data pulled live from the [PokéAPI](https://pokeapi.co/). Built in Python.
 
 ---
 
-## Live Demo
-*(Runs locally via Python — see installation instructions below)*
+## How to play
+
+Each round, you and the opponent are dealt a random Gen 1 Pokémon. You pick a stat to battle with (or let the opponent choose). Whoever has the higher stat wins the round.
+
+**Scoring:** Win = 100 pts | Draw = 50 pts each | Loss = 0 pts
+
+First player to reach the target score wins!
 
 ---
 
-## Overview
-This project was created as part of my learning journey in **Python**, **APIs**, and **game logic design**.  
-It uses live data from the PokéAPI to generate random Pokémon battles and award points based on stat comparisons.
+## Stats available
 
-> *Goal:* Be the first to reach your chosen score limit. Win rounds to earn 100 points, draw to earn 50.
-
----
-
-## Features
-- Fetches **real Pokémon stats** from the PokéAPI  
-- Play as the user or let the CPU choose the stat  
-- Options to **attack**, **defend**, or compare specific stats (HP, Attack, etc.)  
-- Adjustable **score limit** for flexible gameplay  
-- Handles **API errors and invalid inputs** gracefully  
-- Clear game loop and score tracking  
+- Height
+- Weight
+- Base Experience
+- HP
+- Attack (competes against opponent's Defend)
+- Defend (competes against opponent's Attack)
 
 ---
 
-## Project Purpose
-I built this to strengthen my understanding of:
-- RESTful API interaction using `requests`  
-- Input handling and validation in CLI applications  
-- Writing modular, readable Python functions  
-- Implementing basic game logic and scoring systems  
+## Getting started
 
----
-
-## Tech Stack
-| Category | Tools |
-|-----------|-------|
-| **Language** | Python 3 |
-| **Libraries** | `requests`, `random` |
-| **Data Source** | [PokéAPI](https://pokeapi.co/) |
-| **Environment** | Command-line / Terminal |
-
----
-
-## ⚙️ Installation
-
-Clone the repository and install dependencies:
+**Requirements:** Python 3.7+ and the `requests` library.
 
 ```bash
-git clone https://github.com/lizturay/pokemon-top-trumps.git
-cd pokemon-top-trumps
-python -m venv .venv
-# macOS / Linux
-source .venv/bin/activate
-# Windows
-# .venv\Scripts\activate
-pip install -r requirements.txt
-````
-
-### 🧠 Run the Game
-
-```bash
+pip install requests
 python pokemon_top_trumps.py
 ```
 
-### 📦 Requirements File
+**Run the tests:**
 
-Create a simple `requirements.txt`:
-
-```
-requests>=2.31.0
+```bash
+python -m unittest test_pokemon_top_trumps.py -v
 ```
 
 ---
 
-## 🕹️ How to Play
-
-1. Enter your target score (e.g. 300).
-2. Each round, both you and the CPU draw a random Pokémon.
-3. Choose who picks the stat — you or your opponent.
-4. If you select **attack**, your Attack vs. their Defence.
-5. If you select **defense**, your Defence vs. their Attack.
-6. Winning round = **+100 points**, Draw = **+50 points**.
-7. First to reach the score limit wins the game!
-
----
-
-## 🎮 Example Gameplay Preview
+## Project structure
 
 ```
-Game to how many points? 300
-
-You drew: Pikachu  vs  Opponent drew: Bulbasaur
-Choose the stat yourself or let opponent choose? me
-Pick a stat ['id', 'height', 'weight', 'base_experience', 'hp', 'attack', 'defense'] or type 'attack'/'defense':
-attack
-Stat choice is: attack
-Pikachu attacks Bulbasaur
-Your attack: 55  |  Opponent defense: 49
-You win this round.
-Score — You: 100 | Opponent: 0
+pokemon-top-trumps/
+├── pokemon_top_trumps.py       # Main game
+├── test_pokemon_top_trumps.py  # Unit tests
+├── README.md                   # This file
+└── .gitignore
 ```
 
 ---
 
-## Challenges & Lessons Learned
+## What it demonstrates
 
-* Managing asynchronous API calls in a synchronous CLI environment
-* Handling errors gracefully when the PokéAPI times out
-* Ensuring clean variable scope (no globals) for long-term maintainability
-* Structuring Python scripts for readability and reuse
+- Calling a real external REST API (PokéAPI) and handling JSON responses
+- Error handling for network requests
+- Clean function-based structure with no global variables
+- Unit testing with Python's built-in `unittest`
+
+---
+
+## Original version
+
+This is a refactored version of a project originally built on [Replit](https://replit.com).
