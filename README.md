@@ -4,6 +4,11 @@ A terminal-based Top Trumps card game using real Pokémon data pulled live from 
 
 ---
 
+## Live Demo
+▶️ [Play it on Replit](https://replit.com/@lizturay/PokemonTrump)
+
+---
+
 ## How to play
 
 Each round, you and the opponent are dealt a random Gen 1 Pokémon. You pick a stat to battle with (or let the opponent choose). Whoever has the higher stat wins the round.
@@ -65,4 +70,4 @@ pokemon-top-trumps/
 
 ## Original version
 
-This is a refactored version of a project originally built on [Replit](https://replit.com).
+This is a refactored version of a project originally built on [Replit](https://replit.com/@lizturay/PokemonTrump).

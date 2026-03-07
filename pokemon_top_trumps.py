@@ -150,7 +150,7 @@ def main():
     print_header("WELCOME")
     print("""
   Rules:
-  - Each round you get a random Gen 1 Pokémon
+  - Each round you get a random Gen 1 Pokemon
   - Pick a stat to battle with (or let the opponent choose)
   - Win a round = 100 pts | Draw = 50 pts | Loss = 0 pts
   - First to the target score wins!
